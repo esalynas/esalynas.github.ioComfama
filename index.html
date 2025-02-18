@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstebanSalinas</title>
+    <style>
+        :root {
+    --color-negro: #000000;
+    --color-amarillo-macondo: #F7E300; /* Amarillo Macondo */
+    --color-naranja-alba: #d3d5ce ; /* Naranja Alba */
+    --color-violeta-orquidea: #F7E300; /* Violeta Orquidea la paso amarillo*/
+    --color-blanco-perla: #ffffff; /* blanco */
+    --color-verde-andino: #d3d5ce ; /* Verde Andino */
+    --color-verde-erco:#91ce00;
+}
+        /* Estilos globales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffffff; /* Gris oscuro fondo total */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #000000; /* empresa color portada */
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: white; /* Texto blanco */
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        /* Animación de parpadeo */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #91ce00; /* Color principal */
+    color: #ffffff; /* Texto en blanco para mejor contraste */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid rgba(145, 206, 0, 0.7);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    animation: blink 1.5s infinite; /* Manteniendo la animación */
+}
+
+.button:hover {
+    background-color: #7ab500; /* Un tono más oscuro para el hover */
+    color: #ffffff;
+    transform: scale(1.05); /* Pequeño efecto de escala para resaltar */
+}
+
+
+        /* Estilo para centrar la imagen en la primera sección */
+        .intro-content img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px; /* Añadir bordes redondeados opcionales */
+        }
+
+        /* Estilo para la imagen pequeña debajo del botón */
+        .intro-content .small-banner {
+            margin-top: 20px; /* Espacio entre el botón y la imagen */
+            max-width: 30%;   /* Ajusta el tamaño de la imagen pequeña */
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Centra la imagen */
+        }
+
+        /* Estilos para la sección con imagen de fondo y carrusel encima */
+        .about-section {
+    position: relative;
+    background-color: #e9e60d; /* color de empresa */
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Ajusta el estilo para la imagen en la sección "p1 analisis de datos" */
+.about-section img {
+    max-width: 10%; /* Ajusta este valor para controlar el tamaño máximo en pantallas grandes */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+/* Media query para pantallas grandes (como PC) */
+@media (min-width: 1024px) {
+    .about-section img {
+        max-width: 35%; /* Ajusta el tamaño máximo en pantallas grandes */
+    }
+}
+
+/* Media query para pantallas pequeñas (como móviles) */
+@media (max-width: 768px) {
+    .about-section img {
+        max-width: 70%; /* Asegura que la imagen no se desborde en móviles */
+    }
+}
+        /* Estilos para el carrusel ajustado */
+/* Estilos para el carrusel ajustado */
+.carousel {
+    position: relative;
+    width: 100%; /* Usa el 100% del contenedor para asegurar que no se corte ningún slide */
+    height: 400px; /* largo del contenedor de slide*/
+    margin: 5px auto 0;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ajusta el ancho del track para acomodar dos slides visibles a la vez */
+}
+
+.carousel-slide {
+    flex: 1 0 100%; /* Ajusta para mostrar dos slides a la vez */
+    height: 300px; /* Ajusta la altura de los slides */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin: 0; /* Quita el margen entre slides */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.carousel-slide img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.carousel p {
+    margin: 10px;
+    font-size: 1.2em;
+    color: #000; /* Texto en blanco */
+}
+
+        /* Colores y bordes de los slides */
+        .carousel-slide:nth-child(1), .carousel-slide:nth-child(2) {
+            border: 3px solid #91ce00;
+        }
+
+        .carousel-slide:nth-child(3), .carousel-slide:nth-child(4) {
+            border: 3px solid #91ce00;
+        }
+
+        .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
+            border: 3px solid #91ce00;
+        }
+
+        .carousel-slide:nth-child(7), .carousel-slide:nth-child(8) {
+            border: 3px solid #91ce00;
+        }
+
+        
+        .carousel-slide:nth-child(9), .carousel-slide:nth-child(10) {
+            border: 3px solid #91ce00;
+        }
+
+
+
+
+        /* Estilo para la imagen pequeña debajo del carrusel */
+.small-banner-end img {
+    margin-top: -5%;
+    max-width: 20%;  /* Asegura que la imagen no se desborde del contenedor */
+    height: auto;
+    display: block;
+    margin: 3px auto; /* Centra la imagen y añade espacio alrededor */
+}
+
+#portfolio {
+            background: #bedbbe; /* color empresa */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card {
+            position: relative;
+            width: 150px; /* Tamaño reducido */
+            height: 150px; /* Tamaño reducido */
+            perspective: 1000px;
+        }
+
+        .skill-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .skill-card:hover .skill-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .skill-card-front, .skill-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em; /* Tamaño de fuente reducido */
+            text-align: center; /* Centra el texto dentro de las tarjetas */
+            overflow: hidden; /* Evitar desbordamiento */
+        }
+
+        .skill-card-front {
+            background: #000000;
+            color: white;
+        }
+
+        .skill-card-back {
+            background: #ffffff;
+            color: #000000; /* Texto en negro */
+            transform: rotateY(180deg);
+            padding: 5px; /* Espaciado reducido */
+            text-align: center; /* Centra el texto dentro de las tarjetas */
+            overflow: hidden; /* Evitar desbordamiento del texto */
+            border: 2px solid #000000; /* Contorno negro de 2px */
+            font-size: 0.8em; /* Reduce el tamaño del texto */
+        }
+
+        /* Estilos para el contenedor de la sección de portafolio */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para el contenedor de la sección de portafolio */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Flexbox para organizar las tarjetas a la izquierda y la imagen a la derecha */
+.portfolio-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Espacio entre las tarjetas y la imagen */
+    flex-wrap: nowrap; /* Asegura que los elementos no se envuelvan en pantallas pequeñas */
+}
+
+.skills {
+    flex: 1; /* Deja que las tarjetas ocupen el espacio disponible */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.portfolio-image {
+    flex-shrink: 0; /* Evita que la imagen se reduzca en pantallas pequeñas */
+}
+
+.portfolio-image img {
+    max-width: 160px; /* Ajusta el tamaño máximo de la imagen según el tamaño deseado */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Opcional: redondea las esquinas de la imagen */
+}
+
+.img-poder-aportar {
+    max-width: 50%;  /* Ajusta el tamaño máximo al 50% del contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para un mejor diseño */
+    margin: 0 auto;  /* Centra la imagen */
+    display: block;  /* Asegura que se comporte como un bloque */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .img-poder-aportar {
+        max-width: 80%;  /* Aumenta el tamaño en pantallas pequeñas */
+    }
+}
+
+
+/* Ajustes opcionales para pantallas muy pequeñas */
+@media (max-width: 768px) {
+    .portfolio-content {
+        /* No se requiere ajuste específico para móviles, ya que flex-wrap: nowrap evita el cambio */
+    }
+}
+
+.skill-card:nth-child(4) .skill-card-front {
+    background: var(--color-verde-andino);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
+}
+
+.skill-card:nth-child(1) .skill-card-front {
+    background: var(--color-amarillo-macondo);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
+}
+
+.skill-card:nth-child(2) .skill-card-front {
+    background: var(--color-naranja-alba);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
+}
+
+.skill-card:nth-child(3) .skill-card-front {
+    background: var(--color-violeta-orquidea);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+
+/* ESTILOS SECCION P3 "p3-compensacion" */
+
+    /* Estilos para la sección con imagen de fondo y carrusel encima */
+    #p3-compensacion {
+    position: relative;
+    background-color:  #01b400; /* color de empresa */
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    text-align: center; /* Centra el contenido */
+}
+
+#p3-compensacion img {
+    max-width: 10%; /* Ajusta este valor para el tamaño inicial */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+/* Media query para pantallas grandes (como PC) */
+@media (min-width: 1024px) {
+    #p3-compensacion img {
+        max-width: 35%; /* Ajusta el tamaño máximo en pantallas grandes */
+    }
+}
+
+/* Media query para pantallas pequeñas (como móviles) */
+@media (max-width: 768px) {
+    #p3-compensacion img {
+        max-width: 70%; /* Asegura que la imagen no se desborde en móviles */
+    }
+}
+
+
+/* ESTILOS SECCION P4 EXCEL*/
+#p4-excel {
+    background: #F7E300; /* color empresa */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.excel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .excel-preview {
+        width: 100%;
+        height: 500px;
+        border: none;
+    }
+    .excel-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .excel-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 260px; /* Ajustar para que se vea mejor */
+    width: 100%;
+    height: 300px;
+    }
+
+    .iframe-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .excel-iframe {
+        width: 600px; /* Mantiene el tamaño original */
+        height: 371px;
+        border: none;
+        transform: scale(0.73); /* Reducimos el tamaño a la mitad */
+        transform-origin: top left; /* Ajusta el punto de escala */
+    }
+
+
+    .excel-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+   
+    /* ESTILOS SECCION P5 Recomendaciones*/
+    /* Estilos para la sección P5 Recomendaciones */
+#recomendaciones {
+    background: #bedbbe; /* color empresa */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.recomendaciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.recomendaciones-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse; /* Invierte el orden de los elementos */
+}
+
+.suggestions {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.recomendaciones-image {
+    flex-shrink: 0;
+}
+
+.recomendaciones-image img {
+    max-width: 160px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.img-recomendaciones {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .img-recomendaciones {
+        max-width: 80%;
+    }
+}
+
+.suggestion-card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+}
+
+.suggestion-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.suggestion-card:hover .suggestion-card-inner {
+    transform: rotateY(180deg);
+}
+
+.suggestion-card-front, .suggestion-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.suggestion-card-front {
+    background: #000000;
+    color: white;
+}
+
+.suggestion-card-back {
+    background: #ffffff;
+    color: #000000;
+    transform: rotateY(180deg);
+    padding: 5px;
+    border: 2px solid #000000;
+    font-size: 0.8em;
+}
+
+.suggestion-card:nth-child(4) .suggestion-card-front {
+    background: var(--color-verde-erco);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 0.9em; /* Tamaño más grande */
+}
+
+.suggestion-card:nth-child(1) .suggestion-card-front {
+    background: var(--color-verde-erco);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 0.9em; /* Tamaño más grande */
+}
+
+.suggestion-card:nth-child(2) .suggestion-card-front {
+    background: var(--color-verde-erco);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 0.9em; /* Tamaño más grande */
+}
+
+.suggestion-card:nth-child(3) .suggestion-card-front {
+    background: var(--color-verde-erco);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 0.9em; /* Tamaño más grande */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de Portada Introducción con Imagen -->
+        <section id="intro" class="section">
+            <div class="intro-content">
+                <img src="Soy.png" alt="Imagen de presentación">
+                <a href="#about" class="button">Ver mi prueba</a>
+                <img src="banner_small.png" alt="Banner pequeño" class="small-banner">
+            </div>
+        </section>
+
+        <!-- Sección 1 Carrusel ANÁLISIS COMPENSACIÓN -->
+<section id="about" class="section about-section hidden">
+    <img src="Soy_items_ind.png" alt="Imagen de quién soy">
+    <!-- Enlace para descarga del archivo de Excel -->
+    <a href="DB_compensacion_py.xlsx" download="DB_compensacion_py.xlsx">
+        <img src="p1_python.png" alt="letrero">
+    </a>
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="costo_laboral_area.png" alt="Costo Laboral por Área">
+                <p>Costo Laboral por Área</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="salario_genero.png" alt="Distribución Salarial por Género">
+                <p>Distribución Salarial por Género</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="rotacion_salarial.png" alt="Rotación Salarial">
+                <p>Rotación Salarial</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="indicador_crecimiento.png" alt="Indicador de Crecimiento">
+                <p>Indicador de Crecimiento</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="salario_por_cargo.png" alt="Promedio de Salario por Cargo">
+                <p>Promedio de Salario por Cargo</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="brecha_salarial.png" alt="Brecha Salarial">
+                <p>Brecha Salarial</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="nivel_educativo_genero.png" alt="Nivel Educativo por Género">
+                <p>Nivel Educativo por Género</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="relacion_edad_salario.png" alt="Relación entre Edad y Salario">
+                <p>Relación entre Edad y Salario</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="contrato_experiencia.png" alt="Tipos de Contrato con Años de Experiencia">
+                <p>Tipos de Contrato con Años de Experiencia</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="empleados_por_fondo.png" alt="Elección fondo Pensional">
+                <p>Fondo pensional por edad.</p>
+            </div>
+        </div>
+    </div>
+    <img src="banner_small_end.png" alt="Banner pequeño" class="small-banner">
+    <!-- Botón "Ver más" que redirige a la sección 3 (Portafolio) -->
+    <p style="color: #000000;">El análisis y optimización salarial son clave. Herramientas como Python, Excel y ETL potencian la toma de decisiones estratégicas.
+
+        <b>Importancia de los Indicadores</b>
+        
+        Costo Laboral por Área: Distribuye eficientemente el presupuesto.
+        Distribución Salarial por Género: Detecta brechas y promueve equidad.
+        Rotación Salarial: Relaciona estabilidad y competitividad.
+        Indicador de Crecimiento: Mide contratación y costos.
+        Promedio de Salario por Cargo: Compara competitividad interna y externa.
+        Equidad Interna y Externa: Previene desajustes salariales.
+        <b>Impacto de la Tecnología</b>
+        El análisis con Python y Excel permite reportes automatizados y gráficos claros. Los procesos ETL mejoran precisión y planificación.
+        
+        El uso de estas herramientas convierte datos en acciones estratégicas, optimizando compensaciones y fortaleciendo la empresa.</p>
+    <a href="#portfolio" class="button">Ver más</a>
+</section> 
+
+
+        
+
+        <!-- Sección mi p2 estructura salarial -->
+        <section id="portfolio" class="section hidden">
+            <div class="portfolio-container">
+                <img src="Poder_aportar.png" alt="Imagen poder aportar" class="img-poder-aportar">
+                <div class="portfolio-content">
+                    <div class="skills">
+                         <!-- Tarjetas de habilidades -->
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Elementos Clave
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Valoración de puestos, equidad interna y competitividad externa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Análisis de Mercado
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Uso de encuestas salariales y benchmarking sectorial.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Criterios de Ajuste
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Desempeño, inflación, compa-ratio y retención de talento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Enfoque Innovador
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Analítica de datos, automatización y people 360°.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- Imagen de portafolio al lado derecho -->
+                    <div class="portfolio-image">
+                        <img src="Soy_portafolio.png" alt="Imagen de portafolio">
+                    </div>
+                </div>
+            </div>
+            <img src="flujo.png" alt="Img flujo" class="img-poder-aportar">
+            <img src="flujo_estrategia.png" alt="Img estrategia" class="img-poder-aportar">
+            <a href="#p3-compensacion" class="button">Ver más</a>
+        </section>
+
+        
+        <!-- Sección P3 COMPENSACIÓN -->
+        <section id="p3-compensacion" class="section hidden">
+            <img src="soy_compensacion.png" alt="Imag compensación">
+            <h2 style="color: white; font-weight: bold;">People 360°</h2>
+
+            
+            <!-- Evaluación - Carrusel de imágenes -->
+            <div class="subsection">
+                <h3>Evaluación</h3>
+                <div class="carousel" id="evaluacion-carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="eval1.png" alt="Evaluación 1"></div>
+                        <div class="carousel-slide"><img src="eval2.png" alt="Evaluación 2"></div>
+                        <div class="carousel-slide"><img src="eval3.png" alt="Evaluación 3"></div>
+                        <div class="carousel-slide"><img src="eval4.png" alt="Evaluación 4"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diseño de Beneficios - Carrusel con transición -->
+            <div class="subsection">
+                <h3>Diseño de Beneficios</h3>
+                <div class="carousel transition-carousel" id="beneficios-carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="beneficio1.png" alt="Beneficio 1"></div>
+                        <div class="carousel-slide"><img src="beneficio2.png" alt="Beneficio 2"></div>
+                        <div class="carousel-slide"><img src="beneficio3.png" alt="Beneficio 3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan de Comunicación -  -->
+<div class="subsection">
+    <h3>Plan de Comunicación</h3>
+    <div class="info-cards">
+        <div class="card">
+            <img src="comunicacion1.png" alt="Comunicación 1">
+            <p style="color: black;">Estrategias de comunicación interna</p>
+        </div>
+        <div class="card">
+            <img src="comunicacion2.png" alt="Comunicación 2">
+            <p style="color: black;">Canales de información efectivos</p>
+        </div>
+        <div class="card">
+            <img src="comunicacion3.png" alt="Comunicación 3">
+            <p style="color: black;">Participación y retroalimentación</p>
+        </div>
+    </div>
+</div>
+<a href="#p4-excel" class="button">Ver más</a>
+</section>
+
+
+        <!-- Sección P4 EXCEL -->
+        <section id="p4-excel" class="section hidden">
+            <div class="excel-container">
+                 <!-- Enlace que redirige a Google Docs -->
+        <a href="https://docs.google.com/spreadsheets/d/1B5A_txOpZ5g6zRthdIZC0A7Rhw838DBB9y3qIAtWw68/edit?usp=sharing" target="_blank">
+            <img src="EXCEL.png" alt="Imagen Excel" class="img-recomendaciones">
+        </a>
+                <!-- Previsualizador de archivo Excel usando Google Docs -->
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubhtml?gid=1498575114&amp;single=true&amp;widget=true&amp;headers=false"></iframe>                        <div style="text-align: center; margin-top: 10px;color: black;">
+                            <strong>Análisis de base de datos empleados.</strong>
+                        </div>
+                <!-- Contenedor de tarjetas con imágenes de tablas y gráficos -->
+                <div class="excel-content">
+                    <div class="excel-card">
+                        <iframe class="excel-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubchart?oid=1858463979&amp;format=interactive"></iframe>
+                        
+                    </div>
+                    <div class="excel-card">
+                        <iframe class="excel-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubchart?oid=1672432781&amp;format=interactive"></iframe>
+                        
+                    </div>
+                    <div class="excel-card">
+                        <iframe class="excel-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubchart?oid=434456158&amp;format=interactive"></iframe>
+                        
+                    </div>
+                    <div class="excel-card">
+                        <iframe class="excel-iframe"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubchart?oid=966961847&amp;format=interactive"></iframe>
+                        
+                    </div>
+                    <div class="excel-card">
+                        <iframe class="excel-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubchart?oid=1652154361&amp;format=interactive"></iframe>
+                        
+                    </div>
+                </div>
+            <!-- Imagen "Resumen" -->
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="resumen.png" alt="Resumen" class="img-recomendaciones">
+        </div>
+
+        <!-- Análisis debajo de la imagen -->
+        <div style="text-align: center; margin-top: 10px; color: black;">
+            <p><strong>Análisis:</strong></p>
+            <p>
+                En general, los salarios varían significativamente según el departamento, el género, el tipo de contrato y el nivel educativo.<br>
+                La brecha salarial por género es particularmente importante, lo que sugiere que las políticas de equidad salarial podrían necesitar ajustes.<br>
+                Además, los contratos de tipo aprendizaje ofrecen salarios más altos, lo cual es una tendencia curiosa que puede estar ligada a estrategias de atracción de talento.<br>
+                El nivel educativo también impacta los salarios, aunque de manera compleja, ya que no siempre los grados más altos reflejan una mayor compensación salarial.
+            </p>
+        </div>
+    </div>
+    <a href="#recomendaciones" class="button">Ver más</a>
+</section>
+
+
+
+        <!-- Sección P5 Recomendaciones -->
+<section id="recomendaciones" class="section hidden">
+    <div class="recomendaciones-container">
+        <img src="recomendaciones.png" alt="Imagen recomendaciones" class="img-recomendaciones">
+        <div class="recomendaciones-content">
+            <div class="suggestions">
+                <!-- Tarjetas de recomendaciones -->
+                <div class="suggestion-card">
+                    <div class="suggestion-card-inner">
+                        <div class="suggestion-card-front">
+                            CALIDAD DE LOS DATOS.
+                        </div>
+                        <div class="suggestion-card-back">
+                            <p>Para asegurar la confiabilidad y la analítica del negocio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="suggestion-card-inner">
+                        <div class="suggestion-card-front">
+                            PLANES Y POLÍTICAS DEFINIDOS.
+                        </div>
+                        <div class="suggestion-card-back">
+                            <p>Para optimizar la gestión del talento</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="suggestion-card-inner">
+                        <div class="suggestion-card-front">
+                            INNOVACIÓN CONSTANTE.
+                        </div>
+                        <div class="suggestion-card-back">
+                            <p>Para reducción de brechas de compensación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="suggestion-card-inner">
+                        <div class="suggestion-card-front">
+                            TRANSPARENCIA Y COMUNICACIÓN.
+                        </div>
+                        <div class="suggestion-card-back">
+                            <p>Para fortalecer la confianza del talento en las compañías.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Imagen de recomendaciones al lado derecho -->
+            <div class="recomendaciones-image">
+                <img src="soy_recomendaciones.png" alt="Imagen de recomendaciones">
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+
+           
+            
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        let index = 0;
+        
+        function moveCarousel() {
+            index += 1; // Mover de a dos slides
+            if (index >= 10) {
+                index = 0;
+            }
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(moveCarousel, 5000); // Cambiar cada 3 segundos
+
+
+        // carrusel evaluacion p3
+        const evaluacionTrack = document.querySelector('#evaluacion-carousel .carousel-track');
+    const evaluacionSlides = document.querySelectorAll('#evaluacion-carousel .carousel-slide');
+    let evaluacionIndex = 0;
+    
+    function moveEvaluacionCarousel() {
+        evaluacionIndex++; // Avanzar de uno en uno
+        if (evaluacionIndex >= evaluacionSlides.length) {
+            evaluacionIndex = 0; // Reiniciar si llega al final
+        }
+        evaluacionTrack.style.transform = `translateX(-${evaluacionIndex * 100}%)`; // Mover un slide completo
+    }
+
+    setInterval(moveEvaluacionCarousel, 6000); // Cambia cada 3 segundos
+
+    
+        // CARRUSEL BENEFICIOS P3
+        const beneficiosTrack = document.querySelector('#beneficios-carousel .carousel-track');
+    const beneficiosSlides = document.querySelectorAll('#beneficios-carousel .carousel-slide');
+    let beneficiosIndex = 0;
+    
+    function moveBeneficiosCarousel() {
+        beneficiosIndex++; // Avanzar de uno en uno
+        if (beneficiosIndex >= beneficiosSlides.length) {
+            beneficiosIndex = 0; // Reiniciar si llega al final
+        }
+        beneficiosTrack.style.transform = `translateX(-${beneficiosIndex * 100}%)`; // Mover un slide completo
+    }
+
+    setInterval(moveBeneficiosCarousel, 4000); // Cambia cada 3 segundos
+
+
+        // Script para animar el scroll a las secciones cuando se hace clic en los botones
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const sectionId = this.getAttribute('href');
+                document.querySelector(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.button');
+        const sections = document.querySelectorAll('.section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Mostrar la sección correspondiente
+                const sectionId = this.getAttribute('href');
+                const section = document.querySelector(sectionId);
+
+                if (section.classList.contains('hidden')) {
+                    section.classList.remove('hidden');
+                }
+
+                // Mostrar todas las secciones después del primer clic
+                sections.forEach(sec => {
+                    sec.classList.remove('hidden');
+                });
+
+                // Desplazar suavemente hacia la sección
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        });
+    </script>
+</body>
+</html>
