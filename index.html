@@ -13,6 +13,9 @@
     --color-blanco-perla: #ffffff; /* blanco */
     --color-verde-andino: #d3d5ce ; /* Verde Andino */
     --color-verde-erco:#91ce00;
+    --color-empresa-tarjetas-sec2:#ee2b7b;
+    --color-empresa-tarjetas-sec5:#f0f3ff;
+
 }
         /* Estilos globales */
         body {
@@ -20,7 +23,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #ffffff; /* Gris oscuro fondo total */
+            background-color: #ffffff; /* color del fondo de todo el proyecto */
         }
 
         .container {
@@ -32,7 +35,7 @@
         .section {
             padding: 100px 20px;
             text-align: center;
-            background-color: #000000; /* empresa color portada */
+            background-color: #ee2b7b; /* empresa color portada */
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -60,22 +63,23 @@
     }
 }
 
-.button {
+.button { 
     display: inline-block;
     padding: 12px 24px;
-    background: #91ce00; /* Color principal */
-    color: #ffffff; /* Texto en blanco para mejor contraste */
+    background: #ee2b7b; /* Nuevo color principal */
+    color: #ffffff; /* Texto en blanco */
+    font-weight: bold; /* Texto en negrita */
     border-radius: 5px;
     text-decoration: none;
     margin-top: 20px;
-    border: 1px solid rgba(145, 206, 0, 0.7);
+    border: 1px solid #ffffff; /* Borde delgado en blanco */
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     animation: blink 1.5s infinite; /* Manteniendo la animación */
 }
 
 .button:hover {
-    background-color: #7ab500; /* Un tono más oscuro para el hover */
+    background-color: #c02465; /* Tono más oscuro para el hover */
     color: #ffffff;
     transform: scale(1.05); /* Pequeño efecto de escala para resaltar */
 }
@@ -99,10 +103,10 @@
             margin: 20px auto; /* Centra la imagen */
         }
 
-        /* Estilos para la sección con imagen de fondo y carrusel encima */
+        /* ESTILOS SECCION 1:  con imagen de fondo y carrusel encima */
         .about-section {
     position: relative;
-    background-color: #e9e60d; /* color de empresa */
+    background-color: #f0f3ff; /* color de empresa */
     border-radius: 10px;
     overflow: hidden; /* Asegura que la imagen no se desborde */
     text-align: center; /* Centra el contenido */
@@ -175,24 +179,24 @@
 
         /* Colores y bordes de los slides */
         .carousel-slide:nth-child(1), .carousel-slide:nth-child(2) {
-            border: 3px solid #91ce00;
+            border: 3px solid #ee2b7b;
         }
 
         .carousel-slide:nth-child(3), .carousel-slide:nth-child(4) {
-            border: 3px solid #91ce00;
+            border: 3px solid #ee2b7b;
         }
 
         .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
-            border: 3px solid #91ce00;
+            border: 3px solid #ee2b7b;
         }
 
         .carousel-slide:nth-child(7), .carousel-slide:nth-child(8) {
-            border: 3px solid #91ce00;
+            border: 3px solid #ee2b7b;
         }
 
         
         .carousel-slide:nth-child(9), .carousel-slide:nth-child(10) {
-            border: 3px solid #91ce00;
+            border: 3px solid #ee2b7b;
         }
 
 
@@ -207,8 +211,10 @@
     margin: 3px auto; /* Centra la imagen y añade espacio alrededor */
 }
 
+
+/* Estilo SECCIÓN 2: con tarjetas */
 #portfolio {
-            background: #bedbbe; /* color empresa */
+            background: #ffffff; /* color empresa */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -364,29 +370,29 @@ h2 {
 }
 
 .skill-card:nth-child(4) .skill-card-front {
-    background: var(--color-verde-andino);
-    color: #000;
+    background: var(--color-empresa-tarjetas-sec2);
+    color: #ffffff;
     font-weight: bold; /* Negrita */
     font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(1) .skill-card-front {
-    background: var(--color-amarillo-macondo);
-    color: #000;
+    background: var(--color-empresa-tarjetas-sec2);
+    color: #ffffff;
     font-weight: bold; /* Negrita */
     font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(2) .skill-card-front {
-    background: var(--color-naranja-alba);
-    color: #000;
+    background: var(--color-empresa-tarjetas-sec2);
+    color: #ffffff;
     font-weight: bold; /* Negrita */
     font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(3) .skill-card-front {
-    background: var(--color-violeta-orquidea);
-    color: #000;
+    background: var(--color-empresa-tarjetas-sec2);
+    color: #ffffff;
     font-weight: bold; /* Negrita */
     font-size: 1.5em; /* Tamaño más grande */
 }
@@ -398,12 +404,12 @@ h2 {
 
 
 
-/* ESTILOS SECCION P3 "p3-compensacion" */
+/* ESTILOS SECCION 3 */
 
     /* Estilos para la sección con imagen de fondo y carrusel encima */
     #p3-compensacion {
     position: relative;
-    background-color:  #01b400; /* color de empresa */
+    background-color:  #e0f2f2; /* sección 3 color de empresa */
     border-radius: 10px;
     overflow: hidden; /* Asegura que la imagen no se desborde */
     text-align: center; /* Centra el contenido */
@@ -431,9 +437,9 @@ h2 {
 }
 
 
-/* ESTILOS SECCION P4 EXCEL*/
+/* ESTILOS SECCION 4: EXCEL*/
 #p4-excel {
-    background: #F7E300; /* color empresa */
+    background: #f8b8d1; /* SECCIÓN 4: color empresa */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -488,10 +494,10 @@ h2 {
         border-radius: 8px;
     }
    
-    /* ESTILOS SECCION P5 Recomendaciones*/
-    /* Estilos para la sección P5 Recomendaciones */
+    /* ESTILOS SECCION 5: Recomendaciones*/
+    
 #recomendaciones {
-    background: #bedbbe; /* color empresa */
+    background: #ffffff; /* color empresa */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -601,28 +607,28 @@ h2 {
 }
 
 .suggestion-card:nth-child(4) .suggestion-card-front {
-    background: var(--color-verde-erco);
+    background: var(--color-empresa-tarjetas-sec5);
     color: #000;
     font-weight: bold; /* Negrita */
     font-size: 0.9em; /* Tamaño más grande */
 }
 
 .suggestion-card:nth-child(1) .suggestion-card-front {
-    background: var(--color-verde-erco);
+    background: var(--color-empresa-tarjetas-sec5);
     color: #000;
     font-weight: bold; /* Negrita */
     font-size: 0.9em; /* Tamaño más grande */
 }
 
 .suggestion-card:nth-child(2) .suggestion-card-front {
-    background: var(--color-verde-erco);
+    background: var(--color-empresa-tarjetas-sec5);
     color: #000;
     font-weight: bold; /* Negrita */
     font-size: 0.9em; /* Tamaño más grande */
 }
 
 .suggestion-card:nth-child(3) .suggestion-card-front {
-    background: var(--color-verde-erco);
+    background: var(--color-empresa-tarjetas-sec5);
     color: #000;
     font-weight: bold; /* Negrita */
     font-size: 0.9em; /* Tamaño más grande */
@@ -644,7 +650,7 @@ h2 {
             </div>
         </section>
 
-        <!-- Sección 1 Carrusel ANÁLISIS COMPENSACIÓN -->
+        <!-- SECCIÓN 1: con  Carrusel ANÁLISIS COMPENSACIÓN -->
 <section id="about" class="section about-section hidden">
     <img src="Soy_items_ind.png" alt="Imagen de quién soy">
     <!-- Enlace para descarga del archivo de Excel -->
@@ -717,7 +723,7 @@ h2 {
 
         
 
-        <!-- Sección mi p2 estructura salarial -->
+        <!-- SECCIÓN 2:  estructura salarial -->
         <section id="portfolio" class="section hidden">
             <div class="portfolio-container">
                 <img src="Poder_aportar.png" alt="Imagen poder aportar" class="img-poder-aportar">
@@ -777,10 +783,10 @@ h2 {
         </section>
 
         
-        <!-- Sección P3 COMPENSACIÓN -->
+        <!-- SECCIÓN 3: COMPENSACIÓN -->
         <section id="p3-compensacion" class="section hidden">
             <img src="soy_compensacion.png" alt="Imag compensación">
-            <h2 style="color: white; font-weight: bold;">People 360°</h2>
+            <h2 style="color: #ee2b7b; font-weight: bold;">Proceso ETL</h2>
 
             
             <!-- Evaluación - Carrusel de imágenes -->
@@ -830,7 +836,7 @@ h2 {
 </section>
 
 
-        <!-- Sección P4 EXCEL -->
+        <!-- SECCIÓN 4: EXCEL -->
         <section id="p4-excel" class="section hidden">
             <div class="excel-container">
                  <!-- Enlace que redirige a Google Docs -->
